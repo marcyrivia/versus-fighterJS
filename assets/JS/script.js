@@ -60,21 +60,21 @@ class character {
 // let perso1 = new character("Achab", genereChiffre(10,50), genereChiffre(10,50),genereChiffre(10,50));
 // let perso2 = new character("Dazai Osamu", genereChiffre(10,50),genereChiffre(10,50),genereChiffre(10,50));
 
-perso1.info()
+// perso1.info()
 
-perso2.info()
+// perso2.info()
 
-perso1.attaquer(perso2)
+// perso1.attaquer(perso2)
 
-perso1.info()
+// perso1.info()
 
-perso2.info()
+// perso2.info()
 
 const nbrJoueur = 2
 
-players = []
+table = [];
 
-fot (let i = 0; i < nbrJoueur; i ++){
+for (let i = 0; i < nbrJoueur; i ++){
     const nom = prompt("Veuillez entrer un nom")
     const vie = genereChiffre(10,50)
     const attaque = genereChiffre(10,50)
@@ -83,10 +83,14 @@ fot (let i = 0; i < nbrJoueur; i ++){
     const player = new character (nom, vie, attaque, def)
     player.info()
 
-    players.push(player)
+    table.push(player)
 
 }
 
 function run(){
+    while (table[0].existe === true  && table[1].existe === true){
+        table[0].attaquer(table[1])
 
+    }
 }
+run();
